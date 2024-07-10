@@ -7,7 +7,7 @@
 ## 安装 Installation  
 请将MNBMIMRF相关文件置于一个conda环境中（python 3.7+）  
 Please put MNBMIMRF relevant files into a conda environment (python 3.7+).  
-依赖包 Dependancies: `numpy`, `pandas`, 'sklearn`.  
+依赖包 Dependancies: `numpy`, `pandas`, `sklearn`.  
 
 ## 用法示例 Usage example  
 导入示例数据  
