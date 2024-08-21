@@ -46,13 +46,13 @@ class FitModels:
         taxa_all_sum = data.sum(axis=0)
         for i in taxa:
             y = data[i]
-            taxa_i_sum = taxa_all_sum.iloc[i]
+            taxa_i_sum = taxa_all_sum.loc[i]
             x_cov = taxa_i_sum / total_sum
             x_cov = np.nan_to_num(x_cov, nan=0, posinf=0.9, neginf=0)
             taxa_i_bar = data[i].mean()
             x_dep = data[i] / taxa_i_bar
             x_dep = np.nan_to_num(x_dep, nan=0, posinf=10, neginf=0)
-            x = pd.DataFrame({"coverage":x_cov, "deepth":x_dep})
+            x = pd.DataFrame({"coverage":x_cov, "deepth":x_dep}, index=y.index)
             result = ZeroInflatedPoisson(y, x).fit()
 
             # calculate expectation
@@ -77,13 +77,13 @@ class FitModels:
         taxa_all_sum = data.sum(axis=0)
         for i in taxa:
             y = data[i]
-            taxa_i_sum = taxa_all_sum.iloc[i]
+            taxa_i_sum = taxa_all_sum.loc[i]
             x_cov = taxa_i_sum / total_sum
             x_cov = np.nan_to_num(x_cov, nan=0, posinf=0.9, neginf=0)
             taxa_i_bar = data[i].mean()
             x_dep = data[i] / taxa_i_bar
             x_dep = np.nan_to_num(x_dep, nan=0, posinf=10, neginf=0)
-            x = pd.DataFrame({"coverage":x_cov, "deepth":x_dep})
+            x = pd.DataFrame({"coverage":x_cov, "deepth":x_dep}, index=y.index)
             result = ZeroInflatedPoisson(y, x).fit(method='lbfgs')
 
             # calculate expectation
