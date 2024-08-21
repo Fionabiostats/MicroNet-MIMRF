@@ -15,11 +15,12 @@ import numpy as np
 import pandas as pd
 
 # generate example data
-data_mat = np.array([[1, 0, 3, 1, 5],
-                 [4, 0, 6, 3, 1],
-                 [0, 8, 3, 9, 0],
-                 [5, 0, 11, 12, 3],
-                 [3, 0, 15, 8, 2]])
+data_mat = np.array([[13,0,27,0,13], 
+                     [40,27,9,0,0], 
+                     [13,0,13,13,27], 
+                     [27,13,0,11,0], 
+                     [7,13,0,7,0], 
+                     [10,54,0,0,27]])
 
 taxa = ['taxa{}'.format(i) for i in range(1, 6)]
 samples = ['S{}'.format(i) for i in range(1, 6)]
