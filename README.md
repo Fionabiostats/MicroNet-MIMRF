@@ -23,7 +23,7 @@ data_mat = np.array([[13,0,27,0,13],
                      [10,54,0,0,27]])
 
 taxa = ['taxa{}'.format(i) for i in range(1, 6)]
-samples = ['S{}'.format(i) for i in range(1, 6)]
+samples = ['S{}'.format(i) for i in range(1, 7)]
 
 # for our tool, the input file should be consist from n rows' samples and p columns' taxa
 df = pd.DataFrame(data_mat, index=samples, columns=taxa)
@@ -75,14 +75,15 @@ import numpy as np
 import pandas as pd
 
 # 生成示例数据
-data_mat = np.array([[1, 0, 3, 1, 5],
-                 [4, 0, 6, 3, 1],
-                 [0, 8, 3, 9, 0],
-                 [5, 0, 11, 12, 3],
-                 [3, 0, 15, 8, 2]])
+data_mat = np.array([[13,0,27,0,13], 
+                     [40,27,9,0,0], 
+                     [13,0,13,13,27], 
+                     [27,13,0,11,0], 
+                     [7,13,0,7,0], 
+                     [10,54,0,0,27]])
 
 taxa = ['taxa{}'.format(i) for i in range(1, 6)]
-samples = ['S{}'.format(i) for i in range(1, 6)]
+samples = ['S{}'.format(i) for i in range(1, 7)]
 
 # 输入文件应由n行样本和p列物种分类群组成
 df = pd.DataFrame(data_mat, index=samples, columns=taxa)
